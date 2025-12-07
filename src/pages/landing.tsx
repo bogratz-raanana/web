@@ -20,31 +20,31 @@ export default function LandingSection() {
             {/* Small Logo - Upper Right */}
             <div className="absolute top-8 right-8 z-20">
                 <img
-                    src="https://images.unsplash.com/photo-1585409677983-0f6c41ca9c3b?w=80&h=40&fit=crop"
+                    src="/src/assets/chalash-logo.png"
                     alt="לוגו קטן"
-                    className="h-12 w-auto rounded-lg border border-white/30 shadow-lg object-contain"
+                    className="h-12 w-auto rounded-lg  object-contain"
                 />
             </div>
 
             {/* Donate Button - Upper Left */}
             <div className="absolute top-8 left-8 z-20">
                 <a
-                    href="https://example.com/donate"
+                    href="https://tzalash.org/he/%d7%aa%d7%a8%d7%95%d7%9e%d7%94-%d7%9c%d7%91%d7%99%d7%aa-%d7%94%d7%9e%d7%93%d7%a8%d7%a9-%d7%9c%d7%91%d7%95%d7%92%d7%a8%d7%99-%d7%a6%d7%91%d7%90/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-3 bg-gradient-to-r from-yeshiva-accent to-yellow-500 text-white px-8 py-4 rounded-full font-bold text-lg shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105"
                 >
                     <Heart className="w-6 h-6" />
-                    תרומות
+                    לתרומה - היו שותפים
                 </a>
             </div>
 
             {/* Big Logo - Center */}
             <div className="absolute inset-0 flex items-center justify-center z-10">
                 <img
-                    src="https://images.unsplash.com/photo-1585409677983-0f6c41ca9c3b?w=400&h=200&fit=crop"
+                    src="/src/assets/bogratz-logo.jpeg"
                     alt="לוגו ישיבה"
-                    className="h-32 md:h-48 w-auto rounded-2xl border-4 border-white/50 shadow-2xl object-contain animate-fade-in"
+                    className="h-48 md:h-58 w-auto rounded-2xl border-4 border-white/50 shadow-2xl object-contain animate-fade-in"
                 />
             </div>
 

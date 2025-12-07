@@ -1,32 +1,36 @@
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Users, BookOpen, Heart } from "lucide-react";
+import { GraduationCap, House, Heart, Wallet } from "lucide-react";
 
 const staffMembers = [
     {
-        name: "הרב יצחק כהן",
-        role: "ראש הישיבה",
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
-        description: "מוביל את הישיבה עם חכמה ודעת תורה עמוקה"
+        role: "הרב אור שואקה",
+        name: "ראש בית המדרש",
+        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
     },
     {
-        name: "הרב משה לוי",
-        role: "מגיד שיעור בכיר",
-        image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
-        description: "מלמד גמרא ופוסקים ברמה גבוהה"
+        role: 'הרב פרץ איינהורן',
+        name: 'יו"ר ארגון צל"ש ור"מ אמונה',
+        image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
     },
     {
-        name: "הרב אברהם דוד",
-        role: "מחנך ומדריך",
-        image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face",
-        description: "מדריך רוחני ומלווה אישי של התלמידים"
+        role: 'הרב ענניאל אהרון',
+        name: 'ר"מ סדר צהריים',
+        image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face"
+    }
+];
+
+const ExtraStaff = [
+    {
+        name: 'כתבי המהר"ל',
+        role: "הרב בנימין טבדי",
+        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
     },
     {
-        name: "הרב שמואל גולד",
-        role: "מגיד שיעור",
-        image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop&crop=face",
-        description: "מתמחה בהלכה ומשפט עברי"
+        name: 'אמונה',
+        role: 'הרב אורי כהן',
+        image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
     }
 ];
 
@@ -35,48 +39,55 @@ export default function HeroSection() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {/* Hero */}
             <div className="text-center mb-16">
-                <div className="mb-8">
+                {/* <div className="mb-8">
                     <img
                         src="https://images.unsplash.com/photo-1585409677983-0f6c41ca9c3b?w=200&h=80&fit=crop"
                         alt="לוגו הישיבה"
                         className="h-20 md:h-24 mx-auto rounded-lg border-2 border-yeshiva-accent shadow-lg object-contain"
                     />
-                </div>
+                </div> */}
 
                 <h1 className="text-4xl md:text-6xl font-bold text-yeshiva-primary mb-6 leading-tight">
-                    ברוכים הבאים
+                    זה הזמן לתורה
                     <br />
-                    <span className="text-yeshiva-accent">לישיבתנו הקדושה</span>
+                    <span className="text-yeshiva-accent">של התורה</span>
                 </h1>
 
                 <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed mb-12">
-                    מקום בו התורה והיראה נפגשים עם חכמת החיים. אנו מחנכים דור של תלמידי חכמים
-                    ובעלי מידות טובות, הנושאים את אור התורה בכל מקום שהם הולכים
+                    תן את זה לעצמך. תקופה של רגיעה. אל תרוץ מהר. כל הזמן עוד לפניך. בדיוק עכשיו זה הזמן. לחזור פנימה - לבית המדרש. לטעום תורת חיים. להתמלא בכוחות מחודשים. לבנות חיים רעננים ומאירים. עוד מעט לימודים. תהיה גם עבודה. ואם ירצה השם. גם תמצא את אשתך. אך כל זה לא מהר, ולא בחפזון. תקשיב לנשמתך, גם היא רוצה מזון.
                 </p>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
                     <div className="text-center">
                         <div className="w-16 h-16 bg-yeshiva-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                            <Users className="w-8 h-8 text-white" />
+                            <Wallet className="w-8 h-8 text-white" />
                         </div>
-                        <h3 className="text-xl font-semibold text-yeshiva-primary mb-2">קהילה חמה</h3>
-                        <p className="text-gray-600">אווירה משפחתית ותומכת לכל תלמיד</p>
+                        {/* <h3 className="text-xl font-semibold text-yeshiva-primary mb-2">קהילה</h3> */}
+                        <p className="text-gray-600">מלגה מכובדת לאברכים</p>
                     </div>
 
                     <div className="text-center">
                         <div className="w-16 h-16 bg-yeshiva-accent rounded-full flex items-center justify-center mx-auto mb-4">
-                            <BookOpen className="w-8 h-8 text-white" />
+                            <House className="w-8 h-8 text-white" />
                         </div>
-                        <h3 className="text-xl font-semibold text-yeshiva-primary mb-2">לימוד מעמיק</h3>
-                        <p className="text-gray-600">שיטות לימוד מתקדמות ומותאמות אישית</p>
+                        {/* <h3 className="text-xl font-semibold text-yeshiva-primary mb-2">סביבה</h3> */}
+                        <p className="text-gray-600">אפשרות למגורים כולל ארוחות</p>
                     </div>
 
                     <div className="text-center">
                         <div className="w-16 h-16 bg-yeshiva-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                            <GraduationCap className="w-8 h-8 text-white" />
+                        </div>
+                        {/* <h3 className="text-xl font-semibold text-yeshiva-primary mb-2"></h3> */}
+                        <p className="text-gray-600">אפשרות לשילוב עבודה ולימודים</p>
+                    </div>
+
+                    <div className="text-center">
+                        <div className="w-16 h-16 bg-yeshiva-accent rounded-full flex items-center justify-center mx-auto mb-4">
                             <Heart className="w-8 h-8 text-white" />
                         </div>
-                        <h3 className="text-xl font-semibold text-yeshiva-primary mb-2">חינוך לחיים</h3>
-                        <p className="text-gray-600">פיתוח אישיות וערכים יהודיים אותנטיים</p>
+                        {/* <h3 className="text-xl font-semibold text-yeshiva-primary mb-2"></h3> */}
+                        <p className="text-gray-600">אוירה חמה ומשפחתית</p>
                     </div>
                 </div>
             </div>
@@ -85,14 +96,11 @@ export default function HeroSection() {
             <section className="mb-16">
                 <div className="text-center mb-12">
                     <h2 className="text-3xl md:text-4xl font-bold text-yeshiva-primary mb-4">
-                        צוות ההוראה המובחר
+                        צוות בית המדרש
                     </h2>
-                    <p className="text-xl text-gray-700 max-w-2xl mx-auto">
-                        רבנים ומחנכים מנוסים המוקירים כל תלמיד ומלווים אותו בדרכו הרוחנית
-                    </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {staffMembers.map((member, index) => (
                         <Card key={index} className="bg-white/80 backdrop-blur-sm border-gray-200 hover:shadow-xl transition-all duration-300 overflow-hidden">
                             <CardContent className="p-6 text-center">
@@ -109,11 +117,39 @@ export default function HeroSection() {
                                     </div>
                                 </div>
                                 <h3 className="text-xl font-bold text-yeshiva-primary mb-3">{member.name}</h3>
-                                <p className="text-gray-600 text-sm leading-relaxed">{member.description}</p>
                             </CardContent>
                         </Card>
                     ))}
                 </div>
+
+                <div className="text-center mb-12">
+                    <p className="text-xl text-gray-700 max-w-2xl mx-auto">
+                        שיעורים מפי רבנים נוספים
+                    </p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+                    {ExtraStaff.map((member, index) => (
+                        <Card key={index} className="bg-white/80 backdrop-blur-sm border-gray-200 hover:shadow-xl transition-all duration-300 overflow-hidden">
+                            <CardContent className="p-6 text-center">
+                                <div className="relative mb-6">
+                                    <img
+                                        src={member.image}
+                                        alt={member.name}
+                                        className="w-24 h-24 rounded-full mx-auto object-cover border-4 border-yeshiva-accent shadow-lg"
+                                    />
+                                    <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2">
+                                        <Badge className="bg-yeshiva-primary text-white px-3 py-1">
+                                            {member.role}
+                                        </Badge>
+                                    </div>
+                                </div>
+                                <h3 className="text-xl font-bold text-yeshiva-primary mb-3">{member.name}</h3>
+                            </CardContent>
+                        </Card>
+                    ))}
+                </div>
+
             </section>
 
             {/* About Section */}
