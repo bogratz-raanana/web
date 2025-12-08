@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { GraduationCap, House, Heart, Wallet } from "lucide-react";
+import { ChevronLeft, ChevronRight, GraduationCap, House, Heart, Wallet } from "lucide-react";
 
 const staffMembers = [
     {
@@ -34,7 +34,72 @@ const ExtraStaff = [
     }
 ];
 
+const studentReviews = [
+    {
+        name: "אלקנה יצחקי",
+        text: "מורכב לתמצת דבר כל כך עצום ואדיר. אבל בכמה מילים, בית המדרש לבוגרי צבא רעננה זה בית, זה האנשים, זה הרבנים. זה התורה של הלב, תורה שמחוברת לחיים, תורת ישראל."
+    },
+    {
+        name: "מתלמידי הישיבה",
+        text: "זכיתי להיות מהתלמידים הראשונים בבוגר\"צ רעננה, בשבילי בית המדרש הוא כמו משפחה, דיבוק חברים עובדי ה' שלומדים תורה בגדלות ושואפים לחיות אותה גם בחיי המעשה עם חיבור לעם ישראל."
+    },
+    {
+        name: "יואב שושן",
+        text: "עבורי בית המדרש הוא ממש כמו בית, עם קהילה חמה וחזקה שהתחילה להתפתח פה בעיר ובאזור. מקום שאני שמח ללמוד בו תורה, לגדול ולהתפתח רוחנית. בית מדרש שמחובר לתורת ארץ ישראל, תורה חיה ומשמחת. שמח על זכותי לקחת בו חלק."
+    },
+    {
+        name: "אברהם אשר לפידות",
+        text: "בבית המדרש לבוגרי צבא רעננה מצאתי בדיוק את שאהבה נפשי, מקום קרוב שיהיה בית רוחני. חברים לרוחי גם במרכז ולא רק בירושלים איפה שלמדתי לאחר השחרור. חברים לעבודת ה' הקשורים יחד איתי לבית מדרש עם יסודות של תורה אחדותית בכל הרבדים, תורת הרב קוק זצ\"ל ,שמירת הלשון ואמונה כליווי מושלם לכניסה רכה ללימוד התורה, ואל מסלול החיים."
+    },
+    {
+        name: "מתלמידי הישיבה",
+        text: "היכולת לשלב תורה ועבודה אינה מובנת מאליה, בשנים בהם אתה יוצא מבית המדרש לעולם שבחוץ, נדרש מאמץ פעיל ותבונה רבה כדי למצוא את הדרך להמשיך ולשאוב באופן סדור מבית המדרש. להיות מחובר בדרך קבע. בית המדרש לבוגרי צבא ברעננה היא המשפחה התומכת ברגע המעבר ובחיי היומיום שלאחריו. בית המדרש לבוגרי צבא מאפשר שילוב של תורה ועבודה, בית המדרש והחברים הם מקום קבע - במהות או בזמן, כל אחד כפי יכולתו, בו מונחת דעתך ברגעים הקשים והמאתגרים. אתה נעשה שייך תמיד, למקום בו יושבים תלמידי חכמים, מקום בו עמל התורה והלימוד מתיישבים בנחת על הלב, ולא \"על הדרך\" מתוך מרוץ החיים."
+    },
+    {
+        name: "אורי לקריץ",
+        text: "ב\"ה אני זוכה ללמוד בביהמ\"ד לבוגר\"צ ברעננה תוך כדי השירות הסדיר שלי. בית המדרש מאפשר לי לשמור על קשר מלא עם עולם חי של תורה שמחה ורלוונטית, ומשלב גם שיעורים מגוונים ברמה גבוהה וגם לימוד גמרא איכותי. החברה בוגרים ורציניים והאווירה הכללית היא של שילוב עמוק של תורה בחיי המעשה, ועם הפנים קדימה לגדול ולחזק את הקהילה."
+    },
+    {
+        name: "אורן שפירא",
+        text: "ברוך ה' – סוף סוף יש בית מדרש כזה ברעננה! לימוד עמוק, מגוון ועוצמתי שמאיר את הנשמה. זה לא רק ללמוד תורה – זה לחיות אותה, באמת."
+    },
+    {
+        name: "עידן גלנץ",
+        text: "בית המדרש לבוגרי צבא ברעננה בשבילי הוא מקום שבו אפשר ללמוד ולהנות מהלימוד מתוך חיבור אמיתי וחי לתורה. רבנים מדהימים, לכל רב יש את הגוון המיוחד שלו וכמובן שהחבורה מאוד רצינית ומגובשת, מה שמוסיף לאווירה הטובה בבית המדרש."
+    },
+    {
+        name: "יונתן לוזון",
+        text: "בית המדרש לבוגרי צבא ברעננה הוא מקום בו אפשר ללמוד תורה שמחוברת לחיים, עם חברים טובים ושפע של ספרי קודש!"
+    },
+    {
+        name: "יוסף חיים",
+        text: "ב\"ה זכיתי מיד לאחר שירות קרבי משמעותי להיחשף לבית מדרש קטן עם כוח עצום. להגיע ולהיטען באנרגיה לקראת התחנות הבאות בחיים. פגשתי בבית המדרש אכפתיות, ויחס אישי. מיוחדת מאוד השמחה שקורנת כלפי פנים וחוץ, בית המדרש משך אותי, דיבר אלי, והחזיר את הטעם של תקופת הישיבה שלפני הגיוס. למדתי תקופה קצרה בבית המדרש, אך התמלאתי והפקתי ממנה הרבה."
+    },
+    {
+        name: "נתאי בר כהנא, נתניה",
+        text: "בית מדרש באווירה משפחתית חמה, אוהבת ותומכת, במקצועיות ובשליטה בהלכה ובאמונה ובכל נקודות היהדות, המשלבת חיי מעשה וחיי בית מדרש ללא סתירה."
+    }
+];
+
+
 export default function HeroSection() {
+    const [currentReview, setCurrentReview] = useState(0);
+
+    useEffect(() => {
+        const timer = setInterval(() => {
+            setCurrentReview((prev) => (prev + 1) % studentReviews.length);
+        }, 10000);
+        return () => clearInterval(timer);
+    }, []);
+
+    const nextReview = () => {
+        setCurrentReview((prev) => (prev + 1) % studentReviews.length);
+    };
+
+    const prevReview = () => {
+        setCurrentReview((prev) => (prev - 1 + studentReviews.length) % studentReviews.length);
+    };
+
     return (
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {/* Hero */}
@@ -152,31 +217,52 @@ export default function HeroSection() {
 
             </section>
 
-            {/* About Section */}
+            {/* Student Reviews Slideshow */}
             <section className="bg-white/60 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-gray-200">
                 <div className="max-w-4xl mx-auto text-center">
-                    <h2 className="text-3xl md:text-4xl font-bold text-yeshiva-primary mb-8">על הישיבה שלנו</h2>
+                    <h2 className="text-3xl md:text-4xl font-bold text-yeshiva-primary mb-8">תלמידים מספרים</h2>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-right">
-                        <div>
-                            <h3 className="text-xl font-semibold text-yeshiva-accent mb-4">החזון שלנו</h3>
-                            <p className="text-gray-700 leading-relaxed mb-6">
-                                לגדל דור של תלמידי חכמים יראי שמים, המשלבים בין עמקות בלימוד התורה
-                                לבין מעורבות חברתית ותרומה למען הכלל.
-                            </p>
-                        </div>
-                        <div>
-                            <h3 className="text-xl font-semibold text-yeshiva-accent mb-4">השיטה שלנו</h3>
-                            <p className="text-gray-700 leading-relaxed mb-6">
-                                אנו מאמינים בלימוד מעמיק ויסודי, המותאם לרמתו ולצרכיו של כל תלמיד.
-                            </p>
-                        </div>
-                    </div>
+                    <div className="relative min-h-[200px] flex items-center justify-center">
+                        <button
+                            onClick={prevReview}
+                            className="absolute right-0 top-1/2 -translate-y-1/2 p-2 rounded-full bg-yeshiva-primary/10 hover:bg-yeshiva-primary/20 transition-colors"
+                            aria-label="ביקורת קודמת"
+                        >
+                            <ChevronRight className="w-6 h-6 text-yeshiva-primary" />
+                        </button>
 
-                    <div className="mt-8 p-6 bg-yeshiva-primary/5 rounded-2xl border border-yeshiva-primary/20">
-                        <p className="text-yeshiva-primary text-lg font-medium italic">
-                            "ותלמוד תורה כנגד כולם"
-                        </p>
+                        <div className="px-12 md:px-20">
+                            <div className="mb-6 p-6 bg-yeshiva-primary/5 rounded-2xl border border-yeshiva-primary/20">
+                                <p className="text-gray-700 text-lg leading-relaxed mb-4">
+                                    "{studentReviews[currentReview].text}"
+                                </p>
+                                <p className="text-yeshiva-accent font-semibold text-xl">
+                                    - {studentReviews[currentReview].name}
+                                </p>
+                            </div>
+
+                            <div className="flex justify-center gap-2">
+                                {studentReviews.map((_, index) => (
+                                    <button
+                                        key={index}
+                                        onClick={() => setCurrentReview(index)}
+                                        className={`w-2 h-2 rounded-full transition-all duration-300 ${index === currentReview
+                                            ? 'bg-yeshiva-primary w-8'
+                                            : 'bg-gray-300 hover:bg-gray-400'
+                                            }`}
+                                        aria-label={`עבור לביקורת ${index + 1}`}
+                                    />
+                                ))}
+                            </div>
+                        </div>
+
+                        <button
+                            onClick={nextReview}
+                            className="absolute left-0 top-1/2 -translate-y-1/2 p-2 rounded-full bg-yeshiva-primary/10 hover:bg-yeshiva-primary/20 transition-colors"
+                            aria-label="ביקורת הבאה"
+                        >
+                            <ChevronLeft className="w-6 h-6 text-yeshiva-primary" />
+                        </button>
                     </div>
                 </div>
             </section>

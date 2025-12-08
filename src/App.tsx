@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import { Heart, Home as HomeIcon, Play, MapPin, Instagram, Calendar, Menu, X } from "lucide-react";
+import { Heart, Home as HomeIcon, Play, MapPin, Instagram, Calendar, Menu, X, HeartHandshake } from "lucide-react";
 import LandingSection from "./pages/landing";
 import HeroSection from "./pages/heros";
 import VideosSection from "./pages/vidoes";
@@ -9,9 +9,9 @@ import EventsSection from "./pages/events";
 
 const navigationItems = [
   { id: "home", title: "דף הבית", icon: HomeIcon },
-  { id: "videos", title: "סרטונים", icon: Play },
+  { id: "videos", title: "ספריית שיעורים", icon: Play },
   { id: "directions", title: "הגעה לישיבה", icon: MapPin },
-  { id: "photos", title: "תמונות", icon: Instagram },
+  { id: "photos", title: "גלריה", icon: Instagram },
   { id: "events", title: "לוח אירועים", icon: Calendar },
 ];
 
@@ -152,7 +152,7 @@ export default function Home() {
         rel="noopener noreferrer"
         className="md:hidden fixed bottom-6 right-6 z-50 w-14 h-14 bg-gradient-to-r from-yeshiva-accent to-yellow-500 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center hover:scale-110"
       >
-        <Heart className="w-6 h-6" />
+        <HeartHandshake className="w-6 h-6" />
       </a>
 
       {/* Main Content */}

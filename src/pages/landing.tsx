@@ -1,5 +1,5 @@
 import React from "react";
-import { Heart } from "lucide-react";
+import { HeartHandshake } from "lucide-react";
 
 export default function LandingSection() {
     return (
@@ -34,7 +34,7 @@ export default function LandingSection() {
                     rel="noopener noreferrer"
                     className="flex items-center gap-3 bg-gradient-to-r from-yeshiva-accent to-yellow-500 text-white px-8 py-4 rounded-full font-bold text-lg shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105"
                 >
-                    <Heart className="w-6 h-6" />
+                    <HeartHandshake className="w-6 h-6" />
                     לתרומה - היו שותפים
                 </a>
             </div>
