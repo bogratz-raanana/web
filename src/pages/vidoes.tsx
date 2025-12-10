@@ -57,7 +57,7 @@ interface ActivePlaylist {
 /*     Component Code   */
 /* -------------------- */
 
-const API_KEY = "AIzaSyDfVOybkkeBltUcvKHk3LU_pzH3ASiH4BQ";
+const API_KEY = "AIzaSyDCYmvjTRKuppXkVZEK6wfUoeK72_fJvFQ";
 const CHANNEL_ID = "UCioZXW3oASlPs3WsWPtRgMA";
 const UPLOADS_PLAYLIST_ID = "UUioZXW3oASlPs3WsWPtRgMA";
 
