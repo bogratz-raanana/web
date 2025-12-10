@@ -104,7 +104,7 @@ export default function Home() {
                 </button>
               ))}
             </div>
-            <h1 className="text-xl font-bold text-yeshiva-primary">ישיבתנו הקדושה</h1>
+            <h1 className="text-xl font-bold text-yeshiva-primary">בוגר"צ רעננה</h1>
           </div>
         </div>
       </nav>

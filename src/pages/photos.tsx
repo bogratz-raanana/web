@@ -1,4 +1,3 @@
-import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Instagram, Heart, MessageCircle } from "lucide-react";
 
@@ -23,7 +22,7 @@ export default function PhotosSection() {
                             <div className="relative w-full" style={{ paddingTop: '100%', minHeight: '600px' }}>
                                 <iframe
                                     src="https://cdn.lightwidget.com/widgets/68ecd1fa6cdf5808a8e9853dd4e93885.html"
-                                    allowtransparency="true"
+                                    allowTransparency={true}
                                     className="absolute top-0 left-0 w-full h-full border-0 rounded-lg"
                                     scrolling="no"
                                     frameBorder="0"

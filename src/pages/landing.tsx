@@ -1,5 +1,6 @@
-import React from "react";
 import { HeartHandshake } from "lucide-react";
+import ChalashLogo from "../assets/chalash-logo.png";
+import BogratzLogo from "../assets/bogratz-logo.jpeg";
 
 export default function LandingSection() {
     return (
@@ -20,7 +21,7 @@ export default function LandingSection() {
             {/* Small Logo - Upper Right */}
             <div className="absolute top-8 right-8 z-20">
                 <img
-                    src="/src/assets/chalash-logo.png"
+                    src={ChalashLogo}
                     alt="לוגו קטן"
                     className="h-12 w-auto rounded-lg  object-contain"
                 />
@@ -42,7 +43,7 @@ export default function LandingSection() {
             {/* Big Logo - Center */}
             <div className="absolute inset-0 flex items-center justify-center z-10">
                 <img
-                    src="/src/assets/bogratz-logo.jpeg"
+                    src={BogratzLogo}
                     alt="לוגו ישיבה"
                     className="h-48 md:h-58 w-auto rounded-2xl border-4 border-white/50 shadow-2xl object-contain animate-fade-in"
                 />
