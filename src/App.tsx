@@ -1,18 +1,18 @@
 import { useEffect, useState, useRef } from "react";
-import { Heart, Home as HomeIcon, Play, MapPin, Instagram, Calendar, Menu, X, HeartHandshake } from "lucide-react";
+import { Heart, Home as HomeIcon, Play, MapPin, Instagram, Menu, X, HeartHandshake, Phone } from "lucide-react";
 import LandingSection from "./pages/landing";
 import HeroSection from "./pages/heros";
 import VideosSection from "./pages/vidoes";
 import DirectionsSection from "./pages/directions";
 import PhotosSection from "./pages/photos";
-import EventsSection from "./pages/events";
+import ContactSection from "./pages/contact";
 
 const navigationItems = [
   { id: "home", title: "דף הבית", icon: HomeIcon },
   { id: "videos", title: "ספריית שיעורים", icon: Play },
   { id: "directions", title: "הגעה לישיבה", icon: MapPin },
   { id: "photos", title: "גלריה", icon: Instagram },
-  { id: "events", title: "לוח אירועים", icon: Calendar },
+  { id: "contact", title: "צור קשר", icon: Phone },
 ];
 
 export default function Home() {
@@ -182,16 +182,16 @@ export default function Home() {
           <PhotosSection />
         </section>
 
-        {/* EVENTS SECTION */}
-        <section ref={(el) => { sectionRefs.current["events"] = el; }} id="events" className="min-h-screen py-12">
-          <EventsSection />
+        {/* CONTACT SECTION */}
+        <section ref={(el) => { sectionRefs.current["contact"] = el; }} id="contact" className="min-h-screen py-12">
+          <ContactSection />
         </section>
 
         {/* Footer */}
         <footer className="border-t border-gray-200 bg-white/40 backdrop-blur-sm mt-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
             <div className="text-center">
-              <p className="text-yeshiva-primary font-medium mb-2">ישיבתנו הקדושה</p>
+              <p className="text-yeshiva-primary font-medium mb-2">בוגרצ רעננה</p>
               <p className="text-gray-600 text-sm">© 2024 כל הזכויות שמורות</p>
             </div>
           </div>
