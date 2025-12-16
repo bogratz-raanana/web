@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { WeeklyEventCard } from "@/components/eventCard";
-import { GraduationCap, Users, BookOpen, X, Coffee, Utensils, Music } from "lucide-react";
+import { GraduationCap, Users, BookOpen, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import type { LucideIcon } from "lucide-react";
 import tshuvaFlayer from "../assets/tshuva-flayer.jpeg";
@@ -23,8 +23,8 @@ export type Program = {
 const programs: Program[] = [
     {
         id: "soldiers",
-        title: "תוכנית לחיילים",
-        description: "תוכנית המותאמת לחיילים המשרתים בצה״ל",
+        title: "חיילך לאורייתא",
+        description: "תוכנית ערב לחיילים",
         icon: Users,
         color: "from-blue-50 to-blue-100",
         borderColor: "border-blue-200",
@@ -32,8 +32,8 @@ const programs: Program[] = [
     },
     {
         id: "university",
-        title: "תוכנית לסטודנטים",
-        description: "שילוב ייחודי בין לימודי תורה ללימודים אקדמיים",
+        title: "אקדמ-יה",
+        description: "ערב לימוד שבועי לסטודנטים",
         icon: GraduationCap,
         color: "from-purple-50 to-purple-100",
         borderColor: "border-purple-200",
@@ -41,8 +41,8 @@ const programs: Program[] = [
     },
     {
         id: "tshuva",
-        title: "תוכנית יום מלא",
-        description: "לימוד תורה מעמיק ורציף לאורך כל היום",
+        title: "מתחזקים ובעלי תשובה",
+        description: "תכניות קבוצתיות או בהתאמה אישית",
         icon: BookOpen,
         color: "from-green-50 to-green-100",
         borderColor: "border-green-200",
