@@ -1,16 +1,16 @@
 import { useEffect, useState, useRef } from "react";
-import { Heart, Home as HomeIcon, Play, MapPin, Instagram, Menu, X, HeartHandshake, Phone } from "lucide-react";
+import { Heart, Home as HomeIcon, Play, BookOpen, Instagram, Menu, X, HeartHandshake, Phone } from "lucide-react";
 import LandingSection from "./pages/landing";
 import HeroSection from "./pages/heros";
 import VideosSection from "./pages/vidoes";
-import DirectionsSection from "./pages/directions";
+import ProgramsSection from "./pages/programs";
 import PhotosSection from "./pages/photos";
 import ContactSection from "./pages/contact";
 
 const navigationItems = [
   { id: "home", title: "דף הבית", icon: HomeIcon },
   { id: "videos", title: "ספריית שיעורים", icon: Play },
-  { id: "directions", title: "הגעה לישיבה", icon: MapPin },
+  { id: "programs", title: "תוכניות הלימוד", icon: BookOpen },
   { id: "photos", title: "גלריה", icon: Instagram },
   { id: "contact", title: "צור קשר", icon: Phone },
 ];
@@ -172,9 +172,9 @@ export default function Home() {
           <VideosSection />
         </section>
 
-        {/* DIRECTIONS SECTION */}
-        <section ref={(el) => { sectionRefs.current["directions"] = el; }} id="directions" className="min-h-screen py-12">
-          <DirectionsSection />
+        {/* STUDY PROGRAMS SECTION */}
+        <section ref={(el) => { sectionRefs.current["programs"] = el; }} id="programs" className="min-h-screen py-12">
+          <ProgramsSection />
         </section>
 
         {/* PHOTOS SECTION */}

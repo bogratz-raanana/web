@@ -2,7 +2,8 @@ import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { MessageCircle, Phone, User, CheckCircle } from "lucide-react";
+import { MessageCircle, Phone, User, CheckCircle, MapPin, Navigation, ExternalLink } from "lucide-react";
+
 
 export default function ContactSection() {
     const [name, setName] = useState("");
@@ -29,6 +30,39 @@ export default function ContactSection() {
                     נשמח לענות על כל שאלה ולספק מידע נוסף על הישיבה
                 </p>
             </div>
+
+            {/* Address Card */}
+            <Card className="bg-white/80 backdrop-blur-sm border-gray-200 mb-8 max-w-5xl mx-auto">
+                <CardHeader>
+                    <CardTitle className="flex items-center gap-3 text-yeshiva-primary">
+                        <MapPin className="w-6 h-6" />
+                        כתובת הישיבה
+                    </CardTitle>
+                </CardHeader>
+                <CardContent>
+                    <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+                        <div className="text-right space-y-2">
+                            <h3 className="font-semibold text-yeshiva-primary text-lg">מתחם "אוהל ארי" רעננה</h3>
+                            <p className="text-gray-700">רחוב רבוצקי 98</p>
+                            <p className="text-gray-700">קומה מינוס אחת</p>
+                            <div className="flex items-center gap-2 text-yeshiva-accent pt-2">
+                                <Phone className="w-4 h-4" />
+                                <span className="font-medium">055-569-5404</span>
+                            </div>
+                        </div>
+                        <div className="flex gap-3">
+                            <Button onClick={() => window.open("https://www.google.com/maps/dir//Ravutski+St+98,+Ra'anana/@32.1916989,34.8734516,14z?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D", "_blank")} className="bg-yeshiva-primary hover:bg-yeshiva-primary/90 text-white">
+                                <ExternalLink className="w-4 h-4 mr-2" />
+                                Google Maps
+                            </Button>
+                            <Button onClick={() => window.open("https://www.waze.com/he/live-map/directions/%D7%91%D7%99%D7%AA-%D7%9B%D7%A0%D7%A1%D7%AA-%D7%90%D7%95%D7%94%D7%9C-%D7%90%D7%A8%D7%99-%D7%A8%D7%91%D7%95%D7%A6%D7%A7%D7%99-98-%D7%A8%D7%A2%D7%A0%D7%A0%D7%94?to=place.w.22872386.228658323.25339", "_blank")} className="bg-yeshiva-accent hover:bg-yeshiva-accent/90 text-white">
+                                <Navigation className="w-4 h-4 mr-2" />
+                                Waze
+                            </Button>
+                        </div>
+                    </div>
+                </CardContent>
+            </Card>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
                 {/* WhatsApp Card */}

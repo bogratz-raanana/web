@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Instagram, Heart, MessageCircle } from "lucide-react";
+import { Instagram } from "lucide-react";
 import { useEffect } from "react";
 
 export function LightWidget() {
