@@ -42,16 +42,18 @@ export default function LandingSection() {
                         loading={index === 0 ? "eager" : "lazy"}
                         fetchPriority={index === 0 ? "high" : "low"}
                         alt="Background"
-                        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${index === currentIndex ? "opacity-60" : "opacity-0"
+                        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${index === currentIndex ? "opacity-70" : "opacity-0"
                             }`}
                     />
                 ))}
                 {/* Subtle dark tint instead of white to bring out photo details */}
-                <div className="absolute inset-0 bg-white/10 mix-blend-multiply" />
+                <div className="absolute inset-0 bg-black/10 mix-blend-multiply" />
             </div>
 
-            {/* Minimalist Top/Bottom Gradient for UI legibility */}
+            {/* Overlay */}
             <div className="absolute inset-0 bg-gradient-to-b from-white/30 via-transparent to-white/30" />
+            {/* <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/40" /> */}
+
 
             <div className="absolute top-8 right-8 z-20">
                 <img src={ChalashLogo} alt="Logo" className="h-12 w-auto object-contain drop-shadow-md" />
