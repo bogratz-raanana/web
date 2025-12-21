@@ -54,23 +54,28 @@ export default function LandingSection() {
             <div className="absolute inset-0 bg-gradient-to-b from-white/30 via-transparent to-white/30" />
             {/* <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/40" /> */}
 
-
+            {/* Small Logo - Upper Right */}
             <div className="absolute top-8 right-8 z-20">
-                <img src={ChalashLogo} alt="Logo" className="h-12 w-auto object-contain drop-shadow-md" />
+                <img
+                    src={ChalashLogo}
+                    alt="לוגו קטן"
+                    className="h-12 w-auto rounded-lg  object-contain"
+                />
             </div>
 
+            {/* Donate Button - Upper Left */}
             <div className="absolute top-8 left-8 z-20">
                 <a
-                    href="https://tzalash.org/he/..."
+                    href="https://tzalash.org/he/%d7%aa%d7%a8%d7%95%d7%9e%d7%94-%d7%9c%d7%91%d7%99%d7%aa-%d7%94%d7%9e%d7%93%d7%a8%d7%a9-%d7%9c%d7%91%d7%95%d7%92%d7%a8%d7%99-%d7%a6%d7%91%d7%90/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 md:gap-3 bg-gradient-to-r from-yeshiva-accent to-yellow-500 text-white px-4 py-2.5 md:px-8 md:py-4 rounded-full font-bold text-sm md:text-lg shadow-xl transition-all hover:scale-105"
-                >
+                    className="flex items-center gap-1 md:gap-3 bg-gradient-to-r from-yeshiva-accent to-yellow-500 text-white px-4 py-2.5 md:px-8 md:py-4 rounded-full font-bold text-sm md:text-lg shadow-xl md:shadow-2xl transition-all duration-300 hover:scale-105">
                     <HeartHandshake className="w-6 h-6" />
                     לתרומה - היו שותפים
                 </a>
             </div>
 
+            {/* Big Logo - Center */}
             <div className="absolute inset-0 flex items-center justify-center z-10">
                 <img
                     src={BogratzLogo}
@@ -79,11 +84,12 @@ export default function LandingSection() {
                 />
             </div>
 
-            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce">
-                <div className="w-6 h-10 border-2 border-gray-600/50 rounded-full flex items-start justify-center p-2">
-                    <div className="w-1 h-3 bg-gray-600/50 rounded-full" />
+            {/* Scroll indicator */}
+            <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 animate-bounce">
+                <div className="w-6 h-10 border-2 border-white/60 rounded-full flex items-start justify-center p-2">
+                    <div className="w-1 h-3 bg-white/60 rounded-full" />
                 </div>
             </div>
         </div>
     );
-}   
+}
