@@ -3,21 +3,26 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ChevronLeft, ChevronRight, GraduationCap, House, Heart, Wallet } from "lucide-react";
 
+import ravOr from "../assets/heros/rav-or.png";
+import ravAnanial from "../assets/heros/rav-ananiel.png";
+import ravOri from "../assets/heros/rav-ori-cohen.jpg";
+import ravPeretz from "../assets/heros/Rabbi-Peretz-Einhoren.jpg";
+
 const staffMembers = [
     {
         role: "הרב אור שואקה",
         name: "ראש בית המדרש",
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
+        image: ravOr
     },
     {
         role: 'הרב פרץ איינהורן',
         name: 'יו"ר ארגון צל"ש ור"מ אמונה',
-        image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
+        image: ravPeretz
     },
     {
         role: 'הרב ענניאל אהרון',
         name: 'ר"מ סדר צהריים',
-        image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face"
+        image: ravAnanial
     }
 ];
 
@@ -25,12 +30,12 @@ const ExtraStaff = [
     {
         name: 'כתבי המהר"ל',
         role: "הרב בנימין טבדי",
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
+        image: "data:image/jpeg;base64,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"
     },
     {
         name: 'אמונה',
         role: 'הרב אורי כהן',
-        image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
+        image: ravOri
     }
 ];
 
