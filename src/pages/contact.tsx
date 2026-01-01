@@ -147,8 +147,11 @@ export default function ContactSection() {
                         ) : (
                             <div className="text-center py-8">
                                 <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
-                                <p className="text-xl font-semibold text-yeshiva-primary mb-2">תודה רבה!</p>
-                                <p className="text-gray-600">נחזור אליך בהקדם האפשרי</p>
+                                <p className="text-xl font-semibold text-yeshiva-primary mb-2">אופס..</p>
+                                {/* <p className="text-xl font-semibold text-yeshiva-primary mb-2">תודה רבה!</p> */}
+                                {/* <p className="text-gray-600">נחזור אליך בהקדם האפשרי</p> */}
+                                <p className="text-gray-600">האתר עוד בבניה.. בינתיים אפשר לכתוב לרב אור :)</p>
+                                <p className="text-gray-600">055-569-5404</p>
                             </div>
                         )}
                     </CardContent>
