@@ -4,10 +4,10 @@ import { WeeklyEventCard } from "@/components/eventCard";
 import { GraduationCap, Users, BookOpen, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import type { LucideIcon } from "lucide-react";
-import tshuvaFlayer from "../assets/tshuva-flayer.jpeg";
-import soldiersFlayer from "../assets/soldier-flayer.jpeg";
-import studentsFlayer from "../assets/students-flayer.jpeg";
-import toameihaFlayer from "../assets/toameiha-flayer.jpeg";
+import tshuvaFlayer from "../assets/tshuva-flayer.webp";
+import soldiersFlayer from "../assets/soldier-flayer.webp";
+import studentsFlayer from "../assets/students-flayer.webp";
+import toameihaFlayer from "../assets/toameiha-flayer.webp";
 
 export type Program = {
     id: "soldiers" | "university" | "tshuva";

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { HeartHandshake } from "lucide-react";
-import ChalashLogo from "../assets/chalash-logo.png";
-import BogratzLogo from "../assets/bogratz-logo.jpeg";
+import ChalashLogo from "../assets/chalash-logo.webp";
+import BogratzLogo from "../assets/bogratz-logo.webp";
 
 import BgImage1 from "../assets/landing-bg/bg1.webp";
 import BgImage2 from "../assets/landing-bg/bg2.webp";
