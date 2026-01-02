@@ -39,7 +39,8 @@ export default function LandingSection() {
                     <img
                         key={img}
                         src={img}
-                        loading={index === 0 ? "eager" : "lazy"}
+                        loading={"lazy"}
+                        // loading={index === 0 ? "eager" : "lazy"}
                         fetchPriority={index === 0 ? "high" : "low"}
                         alt="Background"
                         className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${index === currentIndex ? "opacity-70" : "opacity-0"
@@ -80,6 +81,7 @@ export default function LandingSection() {
                 <img
                     src={BogratzLogo}
                     alt="Main Logo"
+                    loading="eager"
                     className="h-48 md:h-58 w-auto rounded-2xl border-2 border-white/80 shadow-2xl object-contain animate-fade-in"
                 />
             </div>

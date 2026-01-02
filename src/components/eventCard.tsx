@@ -56,6 +56,7 @@ export function WeeklyEventCard({ flyerSrc }: WeeklyEventCardProps) {
                             <img
                                 src={flyerSrc}
                                 alt="פלייר התוועדות"
+                                loading="lazy"
                                 className="w-36 md:w-40 rounded-xl border-[5px] border-white shadow-xl transition-transform duration-300 group-hover:scale-105"
                             />
                             {/* glossy sticker highlight */}

@@ -104,7 +104,7 @@ export default function Home() {
                 </button>
               ))}
             </div>
-            <h1 className="text-xl font-bold text-yeshiva-primary">בוגר"צ רעננה</h1>
+            <h1 className="text-xl font-bold text-yeshiva-primary">ישיבת בוגרי צבא רעננה</h1>
           </div>
         </div>
       </nav>
@@ -112,7 +112,7 @@ export default function Home() {
       {/* Mobile Header */}
       <header className={`md:hidden fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-200 transition-transform duration-300 ${showNav ? 'translate-y-0' : '-translate-y-full'}`}>
         <div className="flex items-center justify-between px-4 h-14">
-          <h1 className="text-lg font-bold text-yeshiva-primary">ישיבתנו הקדושה</h1>
+          <h1 className="text-lg font-bold text-yeshiva-primary">ישיבת בוגרי צבא רעננה</h1>
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="p-2 rounded-lg hover:bg-gray-100 transition-colors"

@@ -56,7 +56,7 @@ export default function StudyProgramsSection() {
     return (
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-                <h1 className="text-4xl md:text-5xl font-bold text-yeshiva-primary mb-6">תוכניות הלימוד</h1>
+                <h2 className="text-4xl md:text-5xl font-bold text-yeshiva-primary mb-6">תוכניות הלימוד</h2>
             </div>
 
             {/* Special Weekly Event Card */}
@@ -90,6 +90,7 @@ export default function StudyProgramsSection() {
                                         src={program.flyerUrl}
                                         alt={`פליירס ${program.title}`}
                                         className="w-full h-full object-cover"
+                                        loading="lazy"
                                     />
                                     <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                                         <span className="text-white font-semibold text-lg">לחץ להגדלה</span>
@@ -128,7 +129,8 @@ export default function StudyProgramsSection() {
                             <div className="overflow-y-auto max-h-[90vh]">
                                 <img
                                     src={selectedFlyer.flyerUrl}
-                                    alt={`פליירס ${selectedFlyer.title}`}
+                                    alt={`פלייר ${selectedFlyer.title}`}
+                                    loading="lazy"
                                     className="w-full h-auto"
                                 />
                             </div>

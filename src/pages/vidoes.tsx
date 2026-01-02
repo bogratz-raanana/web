@@ -142,7 +142,7 @@ export default function VideosSection() {
     return (
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-                <h1 className="text-4xl md:text-5xl font-bold text-yeshiva-primary mb-6">שיעורים ושיחות</h1>
+                <h2 className="text-4xl md:text-5xl font-bold text-yeshiva-primary mb-6">שיעורים ושיחות</h2>
                 <p className="text-xl text-gray-700 max-w-3xl mx-auto">
                     צפו בשיעורים ובשיחות המרתקות של רבני הישיבה
                 </p>
@@ -270,6 +270,7 @@ export default function VideosSection() {
                                 <img
                                     src={video.snippet.thumbnails?.medium?.url ?? ""}
                                     alt={video.snippet.title}
+                                    loading="lazy"
                                     className="w-full h-full object-cover"
                                 />
                                 <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">

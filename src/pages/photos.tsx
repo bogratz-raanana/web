@@ -35,7 +35,7 @@ export default function PhotosSection() {
     return (
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-                <h1 className="text-4xl md:text-5xl font-bold text-yeshiva-primary mb-6">תמונות מהישיבה</h1>
+                <h2 className="text-4xl md:text-5xl font-bold text-yeshiva-primary mb-6">תמונות מהישיבה</h2>
                 <p className="text-xl text-gray-700 max-w-3xl mx-auto">
                     הצצה לחיי הישיבה היומיומיים, לימודים, אירועים ורגעים מיוחדים
                 </p>
