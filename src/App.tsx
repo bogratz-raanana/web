@@ -73,6 +73,10 @@ export default function Home() {
           .bg-yeshiva-accent { background-color: var(--yeshiva-accent); }
           .border-yeshiva-primary { border-color: var(--yeshiva-primary); }
           .border-yeshiva-accent { border-color: var(--yeshiva-accent); }
+          html {
+            scroll-behavior: smooth;
+          }
+
         `}
       </style>
 
@@ -91,9 +95,9 @@ export default function Home() {
             </a>
             <div className="flex items-center gap-1">
               {navigationItems.map((item) => (
-                <button
+                <a
                   key={item.id}
-                  onClick={() => scrollToSection(item.id)}
+                  href={`#${item.id}`}
                   className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${activeSection === item.id
                     ? 'bg-yeshiva-primary text-white shadow-md'
                     : 'text-yeshiva-primary hover:bg-yeshiva-primary/10'
@@ -101,7 +105,7 @@ export default function Home() {
                 >
                   <item.icon className="w-4 h-4" />
                   {item.title}
-                </button>
+                </a>
               ))}
             </div>
             <h1 className="text-xl font-bold text-yeshiva-primary">ישיבת בוגרי צבא רעננה</h1>
