@@ -185,7 +185,6 @@ export default function HeroSection() {
                         </Card>
                     ))}
                 </div>
-                F
                 <div className="text-center mb-12">
                     <p className="text-xl text-gray-700 max-w-2xl mx-auto">
                         שיעורים מפי רבנים נוספים

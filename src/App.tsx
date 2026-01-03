@@ -47,16 +47,6 @@ export default function Home() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToSection = (sectionId: string) => {
-    const section = sectionRefs.current[sectionId];
-    if (section) {
-      const yOffset = -120;
-      const y = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
-      window.scrollTo({ top: y, behavior: "smooth" });
-    }
-    setMobileMenuOpen(false);
-  };
-
   return (
     <div dir="rtl" className="min-h-screen" style={{ backgroundColor: '#FDFDFB' }}>
       <style>
@@ -132,9 +122,9 @@ export default function Home() {
           <div className="absolute top-14 left-0 right-0 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-lg">
             <div className="p-4 space-y-2">
               {navigationItems.map((item) => (
-                <button
+                <a
                   key={item.id}
-                  onClick={() => scrollToSection(item.id)}
+                  href={`#${item.id}`}
                   className={`flex items-center gap-3 w-full px-4 py-3 rounded-xl text-right transition-all duration-300 ${activeSection === item.id
                     ? 'bg-yeshiva-primary text-white'
                     : 'text-yeshiva-primary hover:bg-yeshiva-primary/10'
@@ -142,7 +132,7 @@ export default function Home() {
                 >
                   <item.icon className="w-5 h-5" />
                   {item.title}
-                </button>
+                </a>
               ))}
             </div>
           </div>
