@@ -1,21 +1,21 @@
 import { useState, useEffect } from "react";
 import { HeartHandshake } from "lucide-react";
-import ChalashLogo from "../assets/chalash-logo.webp";
-import BogratzLogo from "../assets/bogratz-logo.webp";
+import ChalashLogo from "../../assets/chalash-logo.webp";
+import BogratzLogo from "../../assets/bogratz-logo.webp";
 
-import BgImage1 from "../assets/landing-bg/bg1.webp";
-import BgImage2 from "../assets/landing-bg/bg2.webp";
-import BgImage3 from "../assets/landing-bg/bg3.webp";
-import BgImage4 from "../assets/landing-bg/bg4.webp";
-import BgImage5 from "../assets/landing-bg/bg5.webp";
-import BgImage6 from "../assets/landing-bg/bg6.webp";
-import BgImage7 from "../assets/landing-bg/bg7.webp";
-import BgImage8 from "../assets/landing-bg/bg8.webp";
-import BgImage9 from "../assets/landing-bg/bg9.webp";
-import BgImage10 from "../assets/landing-bg/bg10.webp";
-import BgImage11 from "../assets/landing-bg/bg11.webp";
-import BgImage12 from "../assets/landing-bg/bg12.webp";
-import BgImage13 from "../assets/landing-bg/bg13.webp";
+import BgImage1 from "../../assets/landing-bg/bg1.webp";
+import BgImage2 from "../../assets/landing-bg/bg2.webp";
+import BgImage3 from "../../assets/landing-bg/bg3.webp";
+import BgImage4 from "../../assets/landing-bg/bg4.webp";
+import BgImage5 from "../../assets/landing-bg/bg5.webp";
+import BgImage6 from "../../assets/landing-bg/bg6.webp";
+import BgImage7 from "../../assets/landing-bg/bg7.webp";
+import BgImage8 from "../../assets/landing-bg/bg8.webp";
+import BgImage9 from "../../assets/landing-bg/bg9.webp";
+import BgImage10 from "../../assets/landing-bg/bg10.webp";
+import BgImage11 from "../../assets/landing-bg/bg11.webp";
+import BgImage12 from "../../assets/landing-bg/bg12.webp";
+import BgImage13 from "../../assets/landing-bg/bg13.webp";
 
 const backgroundImages = [BgImage1, BgImage2, BgImage3, BgImage4, BgImage5, BgImage6, BgImage7, BgImage8, BgImage9, BgImage10, BgImage11, BgImage12, BgImage13];
 

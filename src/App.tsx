@@ -1,11 +1,11 @@
 import { useEffect, useState, useRef } from "react";
 import { Heart, Home as HomeIcon, Play, BookOpen, Instagram, Menu, X, HeartHandshake, Phone } from "lucide-react";
-import LandingSection from "./pages/landing";
-import HeroSection from "./pages/heros";
-import VideosSection from "./pages/vidoes";
-import ProgramsSection from "./pages/programs";
-import PhotosSection from "./pages/photos";
-import ContactSection from "./pages/contact";
+import LandingSection from "./pages/HomeSections/landing";
+import HeroSection from "./pages/HomeSections/heros";
+import VideosSection from "./pages/HomeSections/vidoes";
+import ProgramsSection from "./pages/HomeSections/programs";
+import PhotosSection from "./pages/HomeSections/photos";
+import ContactSection from "./pages/HomeSections/contact";
 
 const navigationItems = [
   { id: "home", title: "דף הבית", icon: HomeIcon },

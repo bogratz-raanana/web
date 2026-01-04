@@ -3,10 +3,10 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ChevronLeft, ChevronRight, GraduationCap, House, Heart, Wallet } from "lucide-react";
 
-import ravOr from "../assets/heros/rav-or.webp";
-import ravAnanial from "../assets/heros/rav-ananiel.webp";
-import ravOri from "../assets/heros/rav-ori-cohen.webp";
-import ravPeretz from "../assets/heros/Rabbi-Peretz-Einhoren.webp";
+import ravOr from "../../assets/heros/rav-or.webp";
+import ravAnanial from "../../assets/heros/rav-ananiel.webp";
+import ravOri from "../../assets/heros/rav-ori-cohen.webp";
+import ravPeretz from "../../assets/heros/Rabbi-Peretz-Einhoren.webp";
 
 const staffMembers = [
     {
