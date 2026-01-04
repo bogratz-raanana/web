@@ -5,8 +5,8 @@ import Donate from "./pages/donate";
 export default function App() {
   return (
     <Routes>
-      <Route path="/web/" element={<Home />} />
-      <Route path="/web/donate" element={<Donate />} />
+      <Route path="/" element={<Home />} />
+      <Route path="/donate" element={<Donate />} />
     </Routes>
   );
 }
