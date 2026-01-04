@@ -1,4 +1,3 @@
-import React from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Calendar, Clock, ExternalLink } from "lucide-react";
 
@@ -6,7 +5,7 @@ export default function EventsSection() {
     return (
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-                <h1 className="text-4xl md:text-5xl font-bold text-yeshiva-primary mb-6">לוח אירועים</h1>
+                <h2 className="text-4xl md:text-5xl font-bold text-yeshiva-primary mb-6">לוח אירועים</h2>
                 <p className="text-xl text-gray-700 max-w-3xl mx-auto">
                     עקבו אחרי כל האירועים, השיעורים והפעילויות המיוחדות של הישיבה
                 </p>

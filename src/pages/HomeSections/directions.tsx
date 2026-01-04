@@ -7,9 +7,9 @@ export default function DirectionsSection() {
     return (
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-                <h1 className="text-4xl md:text-5xl font-bold text-yeshiva-primary mb-6">הגעה לישיבה</h1>
+                <h2 className="text-4xl md:text-5xl font-bold text-yeshiva-primary mb-6">הגעה לישיבה</h2>
                 <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-                    כל המידע הדרוש להגעה נוחה ובטוחה לישיבתנו הקדושה
+
                 </p>
             </div>
 
@@ -25,13 +25,13 @@ export default function DirectionsSection() {
                     <CardContent>
                         <div className="text-right space-y-4">
                             <div>
-                                <h3 className="font-semibold text-yeshiva-primary text-lg mb-2">ישיבתנו הקדושה</h3>
-                                <p className="text-gray-700">רחוב הרב קוק 15</p>
-                                <p className="text-gray-700">ירושלים, 12345</p>
+                                <h3 className="font-semibold text-yeshiva-primary text-lg mb-2">מתחם אוהל ארי</h3>
+                                <p className="text-gray-700">רבוצקי 98, רעננה</p>
+                                <p className="text-gray-700">קומה 1-</p>
                             </div>
                             <div className="flex items-center gap-2 text-yeshiva-accent">
                                 <Phone className="w-4 h-4" />
-                                <span className="font-medium">02-123-4567</span>
+                                <span className="font-medium">055-569-5404</span>
                             </div>
                         </div>
                         <div className="grid grid-cols-2 gap-4 mt-6">
@@ -49,7 +49,7 @@ export default function DirectionsSection() {
 
                 <Card className="bg-yeshiva-primary/5 backdrop-blur-sm border-yeshiva-primary/20">
                     <CardHeader>
-                        <CardTitle className="text-yeshiva-primary">שעות פתיחה</CardTitle>
+                        <CardTitle className="text-yeshiva-primary">טועמיה</CardTitle>
                     </CardHeader>
                     <CardContent className="text-right space-y-3">
                         <div className="flex justify-between">
@@ -74,17 +74,18 @@ export default function DirectionsSection() {
                     <CardHeader>
                         <CardTitle className="flex items-center gap-3 text-yeshiva-primary">
                             <Car className="w-6 h-6" />
-                            ברכב פרטי
+                            חיילים
                         </CardTitle>
                     </CardHeader>
                     <CardContent className="text-right">
                         <div className="space-y-4">
                             <div className="flex items-center gap-2 text-gray-600">
                                 <Clock className="w-4 h-4" />
-                                <span>20-30 דקות ממרכז העיר</span>
+                                <span>כל יום חמישי</span>
                             </div>
                             <div className="bg-yeshiva-accent/10 p-3 rounded-lg">
-                                <p className="text-sm font-medium text-yeshiva-primary">🅿️ חניה זמינה במתחם</p>
+                                <p className="text-sm font-medium text-yeshiva-primary">שירה וזמרה 🎶🎷</p>
+                                <p className="text-sm text-gray-700">עזרת נשים פתוחה</p>
                             </div>
                         </div>
                     </CardContent>
@@ -94,23 +95,23 @@ export default function DirectionsSection() {
                     <CardHeader>
                         <CardTitle className="flex items-center gap-3 text-yeshiva-primary">
                             <Bus className="w-6 h-6" />
-                            בתחבורה ציבורית
+                            ערבי לימוד לסטודנטים
                         </CardTitle>
                     </CardHeader>
                     <CardContent className="text-right">
                         <div className="space-y-4">
                             <div className="flex items-center gap-2 text-gray-600">
                                 <Clock className="w-4 h-4" />
-                                <span>25-40 דקות</span>
+                                <span>יום רביעי, 18:00-22:00</span>
                             </div>
                             <div className="space-y-2">
                                 <div className="flex items-center justify-between">
                                     <Badge className="bg-blue-100 text-blue-800">קו 12</Badge>
-                                    <span className="text-sm">תחנת הר הצופים</span>
+                                    <span className="text-sm">מלגה שנתית מכובדת!</span>
                                 </div>
                                 <div className="flex items-center justify-between">
                                     <Badge className="bg-green-100 text-green-800">קו 25</Badge>
-                                    <span className="text-sm">תחנת בית ישראל</span>
+                                    <span className="text-sm">פינת שתייה חמה</span>
                                 </div>
                             </div>
                         </div>
@@ -121,7 +122,7 @@ export default function DirectionsSection() {
                     <CardHeader>
                         <CardTitle className="flex items-center gap-3 text-yeshiva-primary">
                             <Train className="w-6 h-6" />
-                            ברכבת
+                            חוזרים בתשובה
                         </CardTitle>
                     </CardHeader>
                     <CardContent className="text-right">
