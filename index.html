@@ -1,15 +1,209 @@
-<!doctype html>
-<html lang="he" dir="rtl">
+<<<<<<< HEAD <!DOCTYPE html>
+    <html lang="en">
 
-<head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/webp" href="/favicon.webp" />
-    <meta name="description" content="האתר הרשמי של ישיבת בוגרי הצבא ברעננה" />
-    <meta name="robots" content="index, follow" />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>בית המדרש לבוגרי צבא רעננה | בוגרצ רעננה</title>
-    <script type="application/ld+json">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>בוגרצ רעננה</title>
+
+        <!-- Tailwind -->
+        <script src="https://cdn.tailwindcss.com"></script>
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body class="bg-gray-100 text-gray-800">
+
+        <div class="container">
+            <!-- Header and Tab Navigation -->
+            <header class="text-center py-8">
+                <h1 class="text-4xl font-extrabold text-blue-600 mb-2">בית המדרש לבוגרי צבא ברעננה</h1>
+                <p class="text-lg text-gray-600">אין עיצוב ועוד לא חשבתי מה נכתוב פה</p>
+            </header>
+
+            <!-- Tab Buttons -->
+            <div class="flex justify-center space-x-4 mb-8 border-b-2 border-gray-200">
+                <button id="youtubeTab" class="tab-button active px-4 py-2 text-gray-700 hover:text-blue-600">שיעורים
+                    וסרטונים</button>
+                <button id="calendarTab" class="tab-button px-4 py-2 text-gray-700 hover:text-blue-600">ארועים
+                    קרובים</button>
+                <button id="instagramTab"
+                    class="tab-button px-4 py-2 text-gray-700 hover:text-blue-600">אינסטגרם</button>
+                <button id="mapTab" class="tab-button px-4 py-2 text-gray-700 hover:text-blue-600">ניווט</button>
+                <button id="aboutTab" class="tab-button px-4 py-2 text-gray-700 hover:text-blue-600">על הישיבה</button>
+            </div>
+
+            <!-- YouTube Channel Showcase Tab Content -->
+            <div id="youtubeSection">
+                <!-- Main Content Area -->
+                <div id="contentContainer" class="hidden">
+                    <!-- Channel Info & Main Video -->
+                    <div class="bg-white rounded-xl shadow-lg p-6 mb-8 transition-all duration-300">
+                        <div id="channelInfo" class="flex items-center mb-6">
+                            <img id="channelThumbnail"
+                                class="w-16 h-16 rounded-full mr-4 border-2 border-blue-500 shadow-md"
+                                alt="Channel Thumbnail">
+                            <div>
+                                <h2 id="channelTitle" class="text-2xl font-bold text-gray-900"></h2>
+                                <p id="channelDescription" class="text-gray-500 text-sm mt-1"></p>
+                            </div>
+                        </div>
+
+                        <div class="relative pb-[56.25%] h-0">
+                            <iframe id="mainVideo" class="absolute top-0 left-0 w-full h-full rounded-lg shadow-md"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+                    </div>
+
+                    <!-- More Videos Section -->
+                    <div class="bg-white rounded-xl shadow-lg p-6 mb-8 transition-all duration-300">
+                        <h3 class="text-xl font-bold mb-4">Latest Videos</h3>
+                        <div id="moreVideosContainer"
+                            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                            <!-- Video thumbnails will be dynamically inserted here -->
+                        </div>
+                    </div>
+
+                    <!-- Playlists Section -->
+                    <div class="bg-white rounded-xl shadow-lg p-6 transition-all duration-300">
+                        <h3 class="text-xl font-bold mb-4">Playlists</h3>
+                        <div id="playlistsContainer" class="flex space-x-4 overflow-x-auto pb-4">
+                            <!-- Playlist thumbnails will be dynamically inserted here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Loading and Error States -->
+                <div id="statusMessage" class="flex flex-col items-center justify-center p-8">
+                    <div id="loader" class="loader hidden"></div>
+                    <p id="messageText" class="text-center text-lg text-gray-500 mt-4">Enter a YouTube channel URL or ID
+                        above.</p>
+                </div>
+            </div>
+
+            <!-- Google Calendar Tab Content -->
+            <div id="calendarSection" class="hidden">
+                <div id="calendarDisplay"
+                    class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center justify-center min-h-[400px]">
+                    <p class="text-center text-lg text-gray-500">Enter a public Gmail address above to display its
+                        calendar
+                        agenda.</p>
+                </div>
+            </div>
+
+            <!-- Instagram Tab Content -->
+            <div id="instagramSection" class="hidden">
+                <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center justify-center min-h-[400px]">
+                    <h3 class="text-xl font-bold mb-4">Instagram Feed</h3>
+                    <p class="text-center text-gray-600 mb-6 max-w-lg">This section shows a live Instagram feed using
+                        the
+                        provided LightWidget iframe code.</p>
+                    <div class="relative w-full overflow-hidden" style="padding-bottom: 120%;">
+                        <!-- LightWidget WIDGET -->
+                        <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script><iframe
+                            src="https://cdn.lightwidget.com/widgets/68ecd1fa6cdf5808a8e9853dd4e93885.html"
+                            scrolling="no" allowtransparency="true" class="lightwidget-widget"
+                            style="width:100%;border:0;overflow:hidden;"></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Map Tab Content -->
+            <div id="mapSection" class="hidden">
+                <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center min-h-[400px]">
+                    <h3 id="mapAddressDisplay" class="text-xl font-bold text-gray-900 mb-4 text-center">אוהל ארי רעננה
+                    </h3>
+                    <div id="mapDisplay" class="relative w-full flex-grow">
+                        <!-- Google Maps Iframe for the specific location -->
+                        <div class="relative w-full pb-[75%] h-0">
+                            <iframe
+                                src="https://www.google.com/maps/embed/v1/place?key=YOUR_GOOGLE_MAPS_API_KEY&q=%D7%90%D7%95%D7%94%D7%9C%20%D7%90%D7%A8%D7%99%20%D7%A8%D7%A2%D7%A0%D7%A0%D7%94"
+                                style="border:0" class="absolute top-0 left-0 w-full h-full rounded-lg shadow-md"
+                                frameborder="0" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                    </div>
+
+                    <!-- New Navigation Links -->
+                    <div id="navLinksContainer" class="flex space-x-6 mt-6">
+                        <a id="wazeLink"
+                            href="https://www.waze.com/he/live-map/directions/%D7%91%D7%99%D7%AA-%D7%9B%D7%A0%D7%A1%D7%AA-%D7%90%D7%95%D7%94%D7%9C-%D7%90%D7%A8%D7%99-%D7%A8%D7%91%D7%95%D7%A6%D7%A7%D7%99-98-%D7%A8%D7%A2%D7%A0%D7%A0%D7%94?to=place.w.22872386.228658323.25339"
+                            target="_blank" class="nav-link">
+                            <!-- Waze SVG Icon -->
+                            <svg width="48" height="48" viewBox="0 0 240 240" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect width="240" height="240" rx="40" fill="#33CCFF" />
+                                <path
+                                    d="M120 40C120 40 101.446 72.3333 113.844 100.957C126.242 129.58 147.284 135.244 147.284 135.244L147.284 174.195C147.284 174.195 137.95 198.816 117.959 199.166C97.9678 199.516 79.4137 186.442 75.3197 167.319L71.4913 150.111L62.7719 152.001L64.4026 159.202C70.6127 185.733 93.3644 207.166 120 207.166C146.636 207.166 169.387 185.733 175.597 159.202L177.228 152.001L168.508 150.111L164.68 167.319C160.586 186.442 142.032 199.516 122.04 199.166C102.049 198.816 92.7152 174.195 92.7152 174.195L92.7152 135.244C92.7152 135.244 113.758 129.58 126.156 100.957C138.554 72.3333 120 40 120 40ZM120 85.3333C125.86 85.3333 130.667 80.5262 130.667 74.6667C130.667 68.8071 125.86 64 120 64C114.14 64 109.333 68.8071 109.333 74.6667C109.333 80.5262 114.14 85.3333 120 85.3333Z"
+                                    fill="white" />
+                            </svg>
+                        </a>
+                        <a id="googleMapsLink"
+                            href="https://www.google.com/maps/dir//%D7%A8%D7%91%D7%95%D7%A6%D7%A7%D7%99+98,+%D7%A8%D7%A2%D7%A0%D7%A0%D7%94%E2%80%AD/@32.1851006,34.9567658,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x151d384257c2c93d:0xfb0ef622079ad09b!2m2!1d34.8867256!2d32.1851199!5m2!1e4!1e3?entry=ttu&g_ep=EgoyMDI1MDgyNS4wIKXMDSoASAFQAw%3D%3D"
+                            target="_blank" class="nav-link">
+                            <!-- Google Maps SVG Icon -->
+                            <svg width="48" height="48" viewBox="0 0 240 240" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect width="240" height="240" rx="40" fill="#FF5722" />
+                                <path
+                                    d="M120 215.118C120 215.118 190.493 148.874 190.493 93.1238C190.493 54.0207 159.299 22.8262 120 22.8262C80.7011 22.8262 49.5066 54.0207 49.5066 93.1238C49.5066 148.874 120 215.118 120 215.118ZM120 123.676C137.986 123.676 152.645 109.017 152.645 91.0305C152.645 73.0441 137.986 58.3846 120 58.3846C102.014 58.3846 87.3547 73.0441 87.3547 91.0305C87.3547 109.017 102.014 123.676 120 123.676Z"
+                                    fill="white" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- New About Tab Content -->
+            <div id="aboutSection" class="hidden">
+                <div class="bg-white rounded-xl shadow-lg p-8">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-6">על הישיבה</h2>
+                    <div class="grid md:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <p class="text-gray-700 mb-4">
+                                על חזון הישיבה
+                            </p>
+                            <p class="text-gray-700 mb-4">
+                                על הצוות
+                            </p>
+                            <p class="text-gray-700">
+                                עוד טקסט אם צריך
+                            </p>
+                        </div>
+                        <div class="space-y-4">
+                            <img src="https://placehold.co/600x400/3b82f6/ffffff?text=Some Image" alt="Vision Image"
+                                class="w-full h-auto object-cover rounded-lg shadow-md">
+                            <img src="https://placehold.co/600x400/1d4ed8/ffffff?text=our team" alt="Team Image"
+                                class="w-full h-auto object-cover rounded-lg shadow-md">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Custom JS -->
+        <script defer src="script.js"></script>
+        =======
+        <!doctype html>
+        <html lang="he" dir="rtl">
+
+        <head>
+            <meta charset="UTF-8" />
+            <link rel="icon" type="image/webp" href="/favicon.webp" />
+            <meta name="description" content="האתר הרשמי של ישיבת בוגרי הצבא ברעננה" />
+            <meta name="robots" content="index, follow" />
+            <meta charset="UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <title>בית המדרש לבוגרי צבא רעננה | בוגרצ רעננה</title>
+            <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "EducationalOrganization",
@@ -23,11 +217,12 @@
   "url": "https://bogratz-raanana.github.io/web"
 }
 </script>
-</head>
+        </head>
 
-<body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-</body>
+        <body>
+            <div id="root"></div>
+            <script type="module" src="/src/main.tsx"></script>
+            >>>>>>> dev
+        </body>
 
-</html>
+        </html>
