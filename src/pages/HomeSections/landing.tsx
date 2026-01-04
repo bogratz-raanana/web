@@ -67,7 +67,7 @@ export default function LandingSection() {
             {/* Donate Button - Upper Left */}
             <div className="absolute top-8 left-8 z-20">
                 <a
-                    href="/web/donate"
+                    href="/donate"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-1 md:gap-3 bg-gradient-to-r from-yeshiva-accent to-yellow-500 text-white px-4 py-2.5 md:px-8 md:py-4 rounded-full font-bold text-sm md:text-lg shadow-xl md:shadow-2xl transition-all duration-300 hover:scale-105">
