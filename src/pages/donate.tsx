@@ -18,7 +18,7 @@ export default function Donate() {
         `}
             </style>
 
-            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
                 {/* Header */}
                 <div className="text-center mb-12">
                     <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-yeshiva-accent to-yellow-500 rounded-full mb-6">
@@ -32,75 +32,63 @@ export default function Donate() {
                     </p>
                 </div>
 
-                {/* Benefits Cards */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-                    <Card className="bg-white/80 border-gray-200">
-                        <CardContent className="p-6 text-center">
-                            <div className="w-12 h-12 bg-yeshiva-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <Users className="w-6 h-6 text-yeshiva-primary" />
+                {/* Benefits Badges */}
+                <div className="flex flex-wrap justify-center gap-4 mb-12">
+                    <div className="flex items-center gap-2 bg-white/80 border border-gray-200 rounded-full px-6 py-3 shadow-sm">
+                        <Users className="w-5 h-5 text-yeshiva-primary" />
+                        <span className="font-semibold text-yeshiva-primary">תמיכה בתלמידים</span>
+                    </div>
+
+                    <div className="flex items-center gap-2 bg-white/80 border border-gray-200 rounded-full px-6 py-3 shadow-sm">
+                        <Heart className="w-5 h-5 text-yeshiva-accent" />
+                        <span className="font-semibold text-yeshiva-primary">זכות גדולה</span>
+                    </div>
+
+                    <div className="flex items-center gap-2 bg-white/80 border border-gray-200 rounded-full px-6 py-3 shadow-sm">
+                        <Shield className="w-5 h-5 text-yeshiva-primary" />
+                        <span className="font-semibold text-yeshiva-primary">תשלום מאובטח</span>
+                    </div>
+                </div>
+
+                {/* Donation Form and Bank Transfer */}
+                <div className="flex flex-col lg:flex-row gap-8">
+                    {/* Donation Form */}
+                    <Card className="bg-white shadow-xl border-gray-200 flex-1">
+                        <CardContent className="p-6 md:p-8">
+                            <h2 className="text-2xl font-bold text-yeshiva-primary mb-6 text-center">
+                                ביצוע תרומה
+                            </h2>
+                            <div className="w-full" style={{ minHeight: "500px" }}>
+                                <iframe
+                                    src="https://www.peach-in.com/cmp/iframe/Yyheggf8l"
+                                    className="w-full h-full border-0"
+                                    style={{ minHeight: "600px" }}
+                                    title="טופס תרומה"
+                                />
                             </div>
-                            <h3 className="font-bold text-yeshiva-primary mb-2">תמיכה בתלמידים</h3>
-                            <p className="text-gray-600 text-sm">עזרה לתלמידים להתפתח ולצמוח בלימוד התורה</p>
                         </CardContent>
                     </Card>
 
-                    <Card className="bg-white/80 border-gray-200">
-                        <CardContent className="p-6 text-center">
-                            <div className="w-12 h-12 bg-yeshiva-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <Heart className="w-6 h-6 text-yeshiva-accent" />
+                    {/* Bank Transfer Info */}
+                    <Card className="bg-white/80 border-gray-200 lg:w-80 flex-shrink-0">
+                        <CardContent className="p-6 md:p-8">
+                            <h3 className="text-xl font-bold text-yeshiva-primary mb-6 text-center">
+                                העברה בנקאית
+                            </h3>
+                            <div className="space-y-3 text-center">
+                                <p className="text-gray-700"><span className="font-semibold">שם הארגון:</span> ארגון צל"ש</p>
+                                <p className="text-gray-700"><span className="font-semibold">בנק:</span> לאומי 10</p>
+                                <p className="text-gray-700"><span className="font-semibold">סניף:</span> 789</p>
+                                <p className="text-gray-700"><span className="font-semibold">חשבון:</span> 19290069</p>
+                                <div className="mt-6 p-4 bg-yeshiva-accent/10 rounded-lg">
+                                    <p className="text-sm text-gray-600 font-medium">
+                                        יש לציין בהערות: "עבור בית המדרש לבוגרי צבא"
+                                    </p>
+                                </div>
                             </div>
-                            <h3 className="font-bold text-yeshiva-primary mb-2">זכות גדולה</h3>
-                            <p className="text-gray-600 text-sm">זכות להיות שותפים בהפצת התורה</p>
-                        </CardContent>
-                    </Card>
-
-                    <Card className="bg-white/80 border-gray-200">
-                        <CardContent className="p-6 text-center">
-                            <div className="w-12 h-12 bg-yeshiva-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <Shield className="w-6 h-6 text-yeshiva-primary" />
-                            </div>
-                            <h3 className="font-bold text-yeshiva-primary mb-2">תשלום מאובטח</h3>
-                            <p className="text-gray-600 text-sm">מערכת תשלום מאובטחת ומהימנה</p>
                         </CardContent>
                     </Card>
                 </div>
-
-                {/* Donation Form */}
-                <Card className="bg-white shadow-xl border-gray-200">
-                    <CardContent className="p-6 md:p-8">
-                        <h2 className="text-2xl font-bold text-yeshiva-primary mb-6 text-center">
-                            ביצוע תרומה
-                        </h2>
-                        <div className="w-full" style={{ minHeight: "500px" }}>
-                            <iframe
-                                src="https://www.peach-in.com/cmp/iframe/Yyheggf8l"
-                                className="w-full h-full border-0"
-                                style={{ minHeight: "600px" }}
-                                title="טופס תרומה"
-                            />
-                        </div>
-                    </CardContent>
-                </Card>
-
-                {/* Bank Transfer Info */}
-                <Card className="bg-white/80 border-gray-200 mt-8">
-                    <CardContent className="p-6 md:p-8">
-                        <h3 className="text-xl font-bold text-yeshiva-primary mb-6 text-center">
-                            העברה בנקאית
-                        </h3>
-                        <div className="space-y-3 text-center max-w-md mx-auto">
-                            <p className="text-gray-700"><span className="font-semibold">שם הארגון:</span> ארגון צל"ש</p>
-                            <p className="text-gray-700"><span className="font-semibold">בנק:</span> לאומי 10</p>
-                            <p className="text-gray-700"><span className="font-semibold">סניף:</span> 789</p>
-                            <p className="text-gray-700"><span className="font-semibold">חשבון:</span> 19290069</p>
-                            <div className="mt-6 p-4 bg-yeshiva-accent/10 rounded-lg">
-                                <p className="text-sm text-gray-600 font-medium">
-                                    יש לציין בהערות: "עבור בית המדרש לבוגרי צבא"
-                                </p>
-                            </div>
-                        </div>
-                    </CardContent>
-                </Card>
 
                 {/* Tax Deduction Info */}
                 <div className="text-center mt-8 p-6 bg-blue-50 rounded-xl border border-blue-200">
