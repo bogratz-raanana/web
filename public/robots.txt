@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://bogratz-raanana.netlify.app/sitemap.xml
+Sitemap: https://bogratz-raanana.co.il//sitemap.xml
