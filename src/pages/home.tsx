@@ -186,7 +186,7 @@ export default function Home() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
             <div className="text-center">
               <p className="text-yeshiva-primary font-medium mb-2">בוגרצ רעננה</p>
-              <p className="text-gray-600 text-sm">© 2024 כל הזכויות שמורות</p>
+              <p className="text-gray-600 text-sm">© 2026 כל הזכויות שמורות</p>
             </div>
           </div>
         </footer>
