@@ -1,59 +1,78 @@
-import { useState, useEffect } from "react";
+import { useRef, useState } from "react";
 import { HeartHandshake } from "lucide-react";
 import ChalashLogo from "../../assets/chalash-logo.webp";
 import BogratzLogo from "../../assets/bogratz-logo.webp";
 
-import BgImage1 from "../../assets/landing-bg/bg1.webp";
-import BgImage2 from "../../assets/landing-bg/bg2.webp";
-import BgImage3 from "../../assets/landing-bg/bg3.webp";
-import BgImage4 from "../../assets/landing-bg/bg4.webp";
-import BgImage5 from "../../assets/landing-bg/bg5.webp";
-import BgImage6 from "../../assets/landing-bg/bg6.webp";
-import BgImage7 from "../../assets/landing-bg/bg7.webp";
-import BgImage8 from "../../assets/landing-bg/bg8.webp";
-import BgImage9 from "../../assets/landing-bg/bg9.webp";
-import BgImage10 from "../../assets/landing-bg/bg10.webp";
-import BgImage11 from "../../assets/landing-bg/bg11.webp";
-import BgImage12 from "../../assets/landing-bg/bg12.webp";
-import BgImage13 from "../../assets/landing-bg/bg13.webp";
+// TODO: replace this placeholder with the real landing poster once provided,
+// e.g. `import PosterImage from "../../assets/landing-bg/landing-poster.webp";`
+// The poster should match the video's first frame for a seamless cross-fade.
+import PosterImage from "../../assets/landing-bg/bg1.webp";
 
-const backgroundImages = [BgImage1, BgImage2, BgImage3, BgImage4, BgImage5, BgImage6, BgImage7, BgImage8, BgImage9, BgImage10, BgImage11, BgImage12, BgImage13];
+// Background video lives in public/ and is copied verbatim by Vite.
+// import.meta.env.BASE_URL respects the `base: './'` setting in vite.config.ts.
+const videoBase = import.meta.env.BASE_URL;
+
+// Skip the video entirely for users who prefer reduced motion — keep the poster.
+const prefersReducedMotion =
+    typeof window !== "undefined" &&
+    window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
 
 export default function LandingSection() {
-    const [currentIndex, setCurrentIndex] = useState(0);
-
-    useEffect(() => {
-        const timer = setInterval(() => {
-            setCurrentIndex((prev) => (prev === backgroundImages.length - 1 ? 0 : prev + 1));
-        }, 5000);
-        return () => clearInterval(timer);
-    }, []);
+    // Only start fetching the video after the poster has painted, so the initial
+    // render is never slowed down by the (much heavier) video download.
+    const [loadVideo, setLoadVideo] = useState(false);
+    // Fade the video in once it's actually ready to play.
+    const [videoReady, setVideoReady] = useState(false);
+    const videoRef = useRef<HTMLVideoElement>(null);
 
     return (
         <div className="relative h-screen w-full overflow-hidden bg-gray-100">
-            <link rel="preload" as="image" href={backgroundImages[0]} />
+            <link rel="preload" as="image" href={PosterImage} />
 
-            {/* Background Slideshow - Higher opacity, less bleaching */}
+            {/* Background: instant poster + video that fades in once loaded */}
             <div className="absolute inset-0">
-                {backgroundImages.map((img, index) => (
-                    <img
-                        key={img}
-                        src={img}
-                        loading={"lazy"}
-                        // loading={index === 0 ? "eager" : "lazy"}
-                        fetchPriority={index === 0 ? "high" : "low"}
-                        alt="Background"
-                        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${index === currentIndex ? "opacity-70" : "opacity-0"
+                {/* Poster shows immediately; kicks off the video load once painted */}
+                <img
+                    src={PosterImage}
+                    fetchPriority="high"
+                    alt="Background"
+                    onLoad={() => {
+                        if (!prefersReducedMotion) setLoadVideo(true);
+                    }}
+                    className="absolute inset-0 w-full h-full object-cover opacity-70"
+                />
+
+                {/* Video streams in the background and cross-fades over the poster */}
+                {loadVideo && (
+                    <video
+                        ref={videoRef}
+                        muted
+                        loop
+                        autoPlay
+                        playsInline
+                        preload="auto"
+                        poster={PosterImage}
+                        aria-hidden="true"
+                        onCanPlay={() => {
+                            videoRef.current?.play().catch(() => {
+                                /* autoplay may be blocked; poster stays visible */
+                            });
+                            setVideoReady(true);
+                        }}
+                        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${videoReady ? "opacity-70" : "opacity-0"
                             }`}
-                    />
-                ))}
+                    >
+                        <source src={`${videoBase}landing.webm`} type="video/webm" />
+                        <source src={`${videoBase}landing.mp4`} type="video/mp4" />
+                    </video>
+                )}
+
                 {/* Subtle dark tint instead of white to bring out photo details */}
                 <div className="absolute inset-0 bg-black/10 mix-blend-multiply" />
             </div>
 
             {/* Overlay */}
             <div className="absolute inset-0 bg-gradient-to-b from-white/30 via-transparent to-white/30" />
-            {/* <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/40" /> */}
 
             {/* Small Logo - Upper Right */}
             <div className="absolute top-8 right-8 z-20">
