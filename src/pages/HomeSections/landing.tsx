@@ -3,10 +3,11 @@ import { HeartHandshake } from "lucide-react";
 import ChalashLogo from "../../assets/chalash-logo.webp";
 import BogratzLogo from "../../assets/bogratz-logo.webp";
 
-// TODO: replace this placeholder with the real landing poster once provided,
-// e.g. `import PosterImage from "../../assets/landing-bg/landing-poster.webp";`
-// The poster should match the video's first frame for a seamless cross-fade.
-import PosterImage from "../../assets/landing-bg/bg1.webp";
+// Desktop background photo — also the poster the video cross-fades in over.
+import PosterImage from "../../assets/landing-bg/landing-desktop-bg.webp";
+// Phone-specific background photo (shown on narrow screens via <picture>);
+// phones keep this static photo and skip the video.
+import PhoneBg from "../../assets/landing-bg/bg7.webp";
 
 // Background video lives in public/ and is copied verbatim by Vite.
 // import.meta.env.BASE_URL respects the `base: './'` setting in vite.config.ts.
@@ -16,6 +17,11 @@ const videoBase = import.meta.env.BASE_URL;
 const prefersReducedMotion =
     typeof window !== "undefined" &&
     window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+
+// Phones keep the static PhoneBg photo and skip the (heavier) video download.
+const isPhone =
+    typeof window !== "undefined" &&
+    window.matchMedia?.("(max-width: 767px)").matches;
 
 export default function LandingSection() {
     // Only start fetching the video after the poster has painted, so the initial
@@ -32,15 +38,20 @@ export default function LandingSection() {
             {/* Background: instant poster + video that fades in once loaded */}
             <div className="absolute inset-0">
                 {/* Poster shows immediately; kicks off the video load once painted */}
-                <img
-                    src={PosterImage}
-                    fetchPriority="high"
-                    alt="Background"
-                    onLoad={() => {
-                        if (!prefersReducedMotion) setLoadVideo(true);
-                    }}
-                    className="absolute inset-0 w-full h-full object-cover opacity-70"
-                />
+                <picture>
+                    {/* Phones get a dedicated portrait-friendly photo */}
+                    <source media="(max-width: 767px)" srcSet={PhoneBg} />
+                    <img
+                        src={PosterImage}
+                        fetchPriority="high"
+                        alt="Background"
+                        onLoad={() => {
+                            if (!prefersReducedMotion && !isPhone) setLoadVideo(true);
+                        }}
+                        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${videoReady ? "opacity-0" : "opacity-70"
+                            }`}
+                    />
+                </picture>
 
                 {/* Video streams in the background and cross-fades over the poster */}
                 {loadVideo && (
