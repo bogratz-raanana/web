@@ -1,27 +1,25 @@
 import { useRef, useState } from "react";
-import { HeartHandshake } from "lucide-react";
+import { HeartHandshake, VolumeX } from "lucide-react";
 import ChalashLogo from "../../assets/chalash-logo.webp";
 import BogratzLogo from "../../assets/bogratz-logo.webp";
 
 // Desktop background photo — also the poster the video cross-fades in over.
 import PosterImage from "../../assets/landing-bg/landing-desktop-bg.webp";
-// Phone-specific background photo (shown on narrow screens via <picture>);
-// phones keep this static photo and skip the video.
+// Phone-specific poster (shown on narrow screens via <picture>) until the
+// video loads; the video then cross-fades in on phones too.
 import PhoneBg from "../../assets/landing-bg/bg7.webp";
 
 // Background video lives in public/ and is copied verbatim by Vite.
 // import.meta.env.BASE_URL respects the `base: './'` setting in vite.config.ts.
 const videoBase = import.meta.env.BASE_URL;
 
+// The inline hero video is muted; this opens the real (sound-on) video on YouTube.
+const YT_URL = "https://www.youtube.com/watch?v=hXWlW-uc4K4";
+
 // Skip the video entirely for users who prefer reduced motion — keep the poster.
 const prefersReducedMotion =
     typeof window !== "undefined" &&
     window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
-
-// Phones keep the static PhoneBg photo and skip the (heavier) video download.
-const isPhone =
-    typeof window !== "undefined" &&
-    window.matchMedia?.("(max-width: 767px)").matches;
 
 export default function LandingSection() {
     // Only start fetching the video after the poster has painted, so the initial
@@ -46,7 +44,7 @@ export default function LandingSection() {
                         fetchPriority="high"
                         alt="Background"
                         onLoad={() => {
-                            if (!prefersReducedMotion && !isPhone) setLoadVideo(true);
+                            if (!prefersReducedMotion) setLoadVideo(true);
                         }}
                         className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${videoReady ? "opacity-0" : "opacity-70"
                             }`}
@@ -115,6 +113,16 @@ export default function LandingSection() {
                     className="h-48 md:h-58 w-auto rounded-2xl border-2 border-white/80 shadow-2xl object-contain animate-fade-in"
                 />
             </div>
+
+            {/* Sound button - opens the full video (with sound) on YouTube */}
+            <button
+                type="button"
+                onClick={() => window.open(YT_URL, "_blank", "noopener,noreferrer")}
+                aria-label="צפו בסרטון עם קול ביוטיוב"
+                className="absolute bottom-4 right-4 z-20 flex items-center justify-center bg-black/20 hover:bg-black/40 backdrop-blur-sm border border-white/30 text-white/80 hover:text-white rounded-full w-8 h-8 shadow-sm transition-all duration-300"
+            >
+                <VolumeX className="w-4 h-4" />
+            </button>
 
             {/* Scroll indicator */}
             <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 animate-bounce">
