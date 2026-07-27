@@ -40,7 +40,7 @@ const ExtraStaff = [
         image: ravMitelman
     },
     {
-        role: 'אמונה',
+        role: 'תורת החסידות',
         name: 'הרב חנניה רכל',
         image: ravHanania
     }
